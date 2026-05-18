@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Imelda Laksmi - Official Account. Rekomendasi produk Mommylatory."
+    />
+    <meta name="theme-color" content="#1a1216" />
+    <meta property="og:title" content="Imelda Laksmi - Official Account" />
+    <meta property="og:description" content="Rekomendasi produk Mommylatory" />
+    <meta property="og:type" content="website" />
+    <title>IMELDA LAKSMI — Official Account</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --pink-soft: #d48da9;
+        --pink-light: #2d1b24;
+        --pink-deep: #ffb7ce;
+        --cream: #1a1a1a;
+        --lilac: #3d2b45;
+        --text-dark: #f0f0f0;
+        --text-mid: #d1d1d1;
+        --text-muted: #a0a0a0;
+        --border-soft: rgba(212, 141, 169, 0.2);
+        --border-hover: rgba(255, 183, 206, 0.4);
+        --bg-card: rgba(30, 30, 30, 0.45);
+        --bg-card-hover: rgba(50, 50, 50, 0.55);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          "Segoe UI",
+          -apple-system,
+          sans-serif;
+        min-height: 100vh;
+        background: #1a1216 url("public/images/bg-imelda.jpg") center center /
+          cover no-repeat fixed;
+        color: var(--text-dark);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      /* Dark overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(
+          160deg,
+          rgba(26, 18, 22, 0.85) 0%,
+          rgba(34, 24, 38, 0.8) 100%
+        );
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* Floating bubbles decoration - adjusted for dark theme */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle 300px at 10% 20%,
+            rgba(212, 141, 169, 0.1) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            circle 250px at 90% 70%,
+            rgba(61, 43, 69, 0.15) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            circle 200px at 50% 90%,
+            rgba(212, 141, 169, 0.08) 0%,
+            transparent 70%
+          );
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* ===== PAGE WRAPPER ===== */
+      .page-wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0;
+      }
+
+      /* ===== FRAME ===== */
+      .frame {
+        width: 100%;
+        max-width: 480px;
+        min-height: 100vh;
+        padding: 44px 22px 60px;
+        position: relative;
+        background: linear-gradient(
+          160deg,
+          rgba(30, 30, 30, 0.6) 0%,
+          rgba(20, 20, 20, 0.5) 100%
+        );
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+      }
+
+      @media (min-width: 520px) {
+        .page-wrapper {
+          padding: 32px 16px 48px;
+        }
+        .frame {
+          min-height: unset;
+          border-radius: 32px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow:
+            0 8px 48px rgba(0, 0, 0, 0.4),
+            0 2px 0 rgba(255, 255, 255, 0.05) inset;
+        }
+      }
+
+      /* ===== HEADER ===== */
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation: fadeInUp 0.7s ease-out;
+      }
+
+      .avatar-wrapper {
+        margin-bottom: 16px;
+        position: relative;
+        width: 108px;
+        height: 108px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d48da9, #3d2b45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 0 0 3px rgba(255, 255, 255, 0.1),
+          0 0 0 5px rgba(212, 141, 169, 0.2),
+          0 8px 24px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .avatar-icon {
+        font-size: 42px;
+        color: #fff;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      }
+
+      .brand-name {
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: var(--text-dark);
+        margin-bottom: 5px;
+      }
+
+      .brand-tagline {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--text-mid);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      /* ===== SOCIAL ROW ===== */
+      .social-row {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 32px;
+        animation: fadeInUp 0.8s ease-out 0.1s backwards;
+      }
+
+      .social-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1.5px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-mid);
+        font-size: 18px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(8px);
+      }
+
+      .social-icon:hover {
+        background: var(--pink-soft);
+        border-color: var(--pink-soft);
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(212, 141, 169, 0.3);
+      }
+
+      /* ===== SECTION TITLE ===== */
+      .section-title {
+        text-align: center;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        margin: 24px 0 14px;
+        position: relative;
+        animation: fadeInUp 0.6s ease-out backwards;
+      }
+
+      .section-title::before,
+      .section-title::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 32px;
+        height: 1px;
+        background: var(--border-soft);
+      }
+      .section-title::before {
+        right: calc(50% + 70px);
+      }
+      .section-title::after {
+        left: calc(50% + 70px);
+      }
+
+      /* ===== PRODUCT GRID ===== */
+      .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-card);
+        border: 1.5px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        text-decoration: none;
+        color: var(--text-dark);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        animation: fadeInUp 0.6s ease-out backwards;
+      }
+
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.05),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .product-card:hover {
+        background: var(--bg-card-hover);
+        border-color: var(--border-hover);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      .product-card:hover::before {
+        left: 100%;
+      }
+
+      /* Product image - Vertical layout */
+      .product-img-wrap {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background: linear-gradient(135deg, #2d1b24, #3d2b45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .product-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .product-img {
+        transform: scale(1.08);
+      }
+
+      .product-img-placeholder {
+        font-size: 32px;
+        color: var(--pink-soft);
+      }
+
+      .product-info {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .product-brand {
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--pink-deep);
+      }
+
+      .product-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text-dark);
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 36px;
+      }
+
+      .product-cta {
+        margin-top: 4px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .product-cta-text {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .product-arrow {
+        color: var(--pink-deep);
+        font-size: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .product-card:hover .product-arrow {
+        transform: translateX(3px);
+        color: var(--pink-soft);
+      }
+
+      /* Stagger */
+      .product-card:nth-child(1) { animation-delay: 0.1s; }
+      .product-card:nth-child(2) { animation-delay: 0.2s; }
+      .product-card:nth-child(3) { animation-delay: 0.3s; }
+      .product-card:nth-child(4) { animation-delay: 0.4s; }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        margin-top: 40px;
+        text-align: center;
+        animation: fadeInUp 0.6s ease-out 0.5s backwards;
+      }
+
+      .footer-name {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: var(--text-mid);
+        margin-bottom: 4px;
+      }
+
+      .footer-text {
+        font-size: 10px;
+        color: var(--text-muted);
+      }
+
+      /* ===== ANIMATIONS ===== */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.05);
+        }
+      }
+
+      /* ===== CUTE FLOATING HEARTS ===== */
+      .hearts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 14px;
+        opacity: 0;
+        animation: floatHeart linear infinite;
+        color: rgba(212, 141, 169, 0.4);
+      }
+
+      .heart:nth-child(1) {
+        left: 8%;
+        animation-duration: 8s;
+        animation-delay: 0s;
+        font-size: 12px;
+      }
+      .heart:nth-child(2) {
+        left: 20%;
+        animation-duration: 10s;
+        animation-delay: 2s;
+        font-size: 16px;
+      }
+      .heart:nth-child(3) {
+        left: 35%;
+        animation-duration: 7s;
+        animation-delay: 4s;
+        font-size: 10px;
+      }
+      .heart:nth-child(4) {
+        left: 55%;
+        animation-duration: 9s;
+        animation-delay: 1s;
+        font-size: 14px;
+      }
+      .heart:nth-child(5) {
+        left: 70%;
+        animation-duration: 11s;
+        animation-delay: 3s;
+        font-size: 12px;
+      }
+      .heart:nth-child(6) {
+        left: 85%;
+        animation-duration: 8s;
+        animation-delay: 5s;
+        font-size: 10px;
+      }
+      .heart:nth-child(7) {
+        left: 92%;
+        animation-duration: 12s;
+        animation-delay: 0.5s;
+        font-size: 16px;
+      }
+
+      @keyframes floatHeart {
+        0% {
+          bottom: -20px;
+          opacity: 0;
+          transform: translateX(0) rotate(0deg);
+        }
+        10% {
+          opacity: 0.6;
+        }
+        90% {
+          opacity: 0.3;
+        }
+        100% {
+          bottom: 110%;
+          opacity: 0;
+          transform: translateX(30px) rotate(20deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating hearts decoration -->
+    <div class="hearts">
+      <span class="heart">🌸</span>
+      <span class="heart">💕</span>
+      <span class="heart">🌸</span>
+      <span class="heart">✨</span>
+      <span class="heart">💕</span>
+      <span class="heart">🌸</span>
+      <span class="heart">✨</span>
+    </div>
+
+    <div class="page-wrapper">
+      <div class="frame">
+        <!-- HEADER -->
+        <header class="header">
+          <div class="avatar-wrapper">
+            <img src="public/img/profile.jpg" alt="Imelda Laksmi" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <i class="fa-solid fa-star avatar-icon" style="display: none;"></i>
+          </div>
+          <div class="brand-name">Imelda Laksmi</div>
+          <div class="brand-tagline">Official Account</div>
+
+          <!-- SOCIAL ICONS -->
+          <div class="social-row">
+            <a
+              href="https://www.instagram.com/emilmeihwa?igsh=MWoyYTlwODdqcm11dQ%3D%3D&utm_source=qr"
+              class="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@emilmeihwa?_r=1&_t=ZS-96D6bPqwS0H"
+              class="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </header>
+
+        <!-- REKOMENDASI PRODUK -->
+        <h2 class="section-title">Rekomendasi Produk</h2>
+        <div class="products">
+          <!-- Shampoo -->
+          <a
+            href="https://id.shp.ee/FFBxSWnq"
+            class="product-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="product-img-wrap">
+              <img
+                src="public/img/shampoo.png"
+                alt="Mommylatory Shampoo"
+                class="product-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="product-img-placeholder" style="display: none">🧴</div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Mommylatory</div>
+              <div class="product-name">Shampoo</div>
+              <div class="product-cta">
+                <div class="product-cta-text">
+                  <i class="fa-solid fa-bag-shopping" style="font-size: 10px"></i>
+                  Beli di Shopee
+                </div>
+                <i class="fa-solid fa-arrow-right product-arrow"></i>
+              </div>
+            </div>
+          </a>
+
+          <!-- Shower Gel -->
+          <a
+            href="https://id.shp.ee/r1MuUQzi"
+            class="product-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="product-img-wrap">
+              <img
+                src="public/img/showergell.png"
+                alt="Mommylatory Shower Gel"
+                class="product-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="product-img-placeholder" style="display: none">🚿</div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Mommylatory</div>
+              <div class="product-name">Shower Gel</div>
+              <div class="product-cta">
+                <div class="product-cta-text">
+                  <i class="fa-solid fa-bag-shopping" style="font-size: 10px"></i>
+                  Beli di Shopee
+                </div>
+                <i class="fa-solid fa-arrow-right product-arrow"></i>
+              </div>
+            </div>
+          </a>
+
+          <!-- Body Lotion -->
+          <a
+            href="https://id.shp.ee/jjNZ5AeT"
+            class="product-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="product-img-wrap">
+              <img
+                src="public/img/bodylotion.png"
+                alt="Mommylatory Body Lotion"
+                class="product-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="product-img-placeholder" style="display: none">🌿</div>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Mommylatory</div>
+              <div class="product-name">Body Lotion</div>
+              <div class="product-cta">
+                <div class="product-cta-text">
+                  <i class="fa-solid fa-bag-shopping" style="font-size: 10px"></i>
+                  Beli di Shopee
+                </div>
+                <i class="fa-solid fa-arrow-right product-arrow"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="footer-name">IMELDA LAKSMI</div>
+          <div class="footer-text">© 2026 · Official Account</div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
