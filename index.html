@@ -5,31 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Imelda Laksmi - Official Account. Rekomendasi produk Mommylatory."
+      content="Imelda Laksmi - Official Account. Rekomendasi produk Beautylatory."
     />
-    <meta name="theme-color" content="#1a1216" />
-    <meta property="og:title" content="Imelda Laksmi - Official Account" />
-    <meta property="og:description" content="Rekomendasi produk Mommylatory" />
-    <meta property="og:type" content="website" />
-    <title>IMELDA LAKSMI — Official Account</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <meta name="theme-color" content="#432B27" />
+    <title>Imelda Laksmi</title>
+    <link rel="stylesheet" href="public/css/all.min.css" />
     <style>
       :root {
-        --pink-soft: #d48da9;
-        --pink-light: #2d1b24;
-        --pink-deep: #ffb7ce;
-        --cream: #1a1a1a;
-        --lilac: #3d2b45;
-        --text-dark: #f0f0f0;
-        --text-mid: #d1d1d1;
-        --text-muted: #a0a0a0;
-        --border-soft: rgba(212, 141, 169, 0.2);
-        --border-hover: rgba(255, 183, 206, 0.4);
-        --bg-card: rgba(30, 30, 30, 0.45);
-        --bg-card-hover: rgba(50, 50, 50, 0.55);
+        --pink-soft: #f5cbd9;
+        --pink-deep: #f89fb8;
+        --text-dark: #ffffff;
+        --text-mid: #f5cbd9;
+        --text-muted: #d4b5b0;
+        --border-soft: rgba(245, 203, 217, 0.15);
+        --border-hover: rgba(245, 203, 217, 0.35);
+        --bg-card: rgba(67, 43, 39, 0.55);
+        --bg-card-hover: rgba(90, 61, 56, 0.7);
       }
 
       * {
@@ -45,459 +36,99 @@
         font-family:
           "Segoe UI",
           -apple-system,
+          BlinkMacSystemFont,
           sans-serif;
         min-height: 100vh;
-        background: #1a1216 url("public/images/bg-imelda.jpg") center center /
-          cover no-repeat fixed;
+        background: #3b2220;
         color: var(--text-dark);
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
         display: flex;
-        align-items: flex-start;
         justify-content: center;
+        align-items: flex-start;
       }
 
-      /* Dark overlay */
       body::before {
         content: "";
         position: fixed;
         inset: 0;
         background: linear-gradient(
           160deg,
-          rgba(26, 18, 22, 0.85) 0%,
-          rgba(34, 24, 38, 0.8) 100%
+          rgba(67, 43, 39, 0.92) 0%,
+          rgba(45, 29, 26, 0.88) 100%
         );
         z-index: 0;
         pointer-events: none;
       }
 
-      /* Floating bubbles decoration - adjusted for dark theme */
       body::after {
         content: "";
         position: fixed;
         inset: 0;
         background:
           radial-gradient(
-            circle 300px at 10% 20%,
-            rgba(212, 141, 169, 0.1) 0%,
+            circle 320px at 15% 15%,
+            rgba(245, 203, 217, 0.07) 0%,
             transparent 70%
           ),
           radial-gradient(
-            circle 250px at 90% 70%,
-            rgba(61, 43, 69, 0.15) 0%,
-            transparent 70%
-          ),
-          radial-gradient(
-            circle 200px at 50% 90%,
-            rgba(212, 141, 169, 0.08) 0%,
+            circle 260px at 85% 75%,
+            rgba(90, 61, 56, 0.1) 0%,
             transparent 70%
           );
         z-index: 0;
         pointer-events: none;
       }
 
-      /* ===== PAGE WRAPPER ===== */
-      .page-wrapper {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        min-height: 100vh;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 0;
-      }
-
-      /* ===== FRAME ===== */
-      .frame {
-        width: 100%;
-        max-width: 480px;
-        min-height: 100vh;
-        padding: 44px 22px 60px;
-        position: relative;
-        background: linear-gradient(
-          160deg,
-          rgba(30, 30, 30, 0.6) 0%,
-          rgba(20, 20, 20, 0.5) 100%
-        );
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-      }
-
-      @media (min-width: 520px) {
-        .page-wrapper {
-          padding: 32px 16px 48px;
-        }
-        .frame {
-          min-height: unset;
-          border-radius: 32px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          box-shadow:
-            0 8px 48px rgba(0, 0, 0, 0.4),
-            0 2px 0 rgba(255, 255, 255, 0.05) inset;
-        }
-      }
-
-      /* ===== HEADER ===== */
-      .header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        animation: fadeInUp 0.7s ease-out;
-      }
-
-      .avatar-wrapper {
-        margin-bottom: 16px;
-        position: relative;
-        width: 108px;
-        height: 108px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #d48da9, #3d2b45);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow:
-          0 0 0 3px rgba(255, 255, 255, 0.1),
-          0 0 0 5px rgba(212, 141, 169, 0.2),
-          0 8px 24px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-      }
-
-      .avatar-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .avatar-icon {
-        font-size: 42px;
-        color: #fff;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-      }
-
-      .brand-name {
-        font-size: 26px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        color: var(--text-dark);
-        margin-bottom: 5px;
-      }
-
-      .brand-tagline {
-        font-size: 11px;
-        font-weight: 600;
-        color: var(--text-mid);
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-      }
-
-      /* ===== SOCIAL ROW ===== */
-      .social-row {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-bottom: 32px;
-        animation: fadeInUp 0.8s ease-out 0.1s backwards;
-      }
-
-      .social-icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1.5px solid var(--border-soft);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-mid);
-        font-size: 18px;
-        text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        backdrop-filter: blur(8px);
-      }
-
-      .social-icon:hover {
-        background: var(--pink-soft);
-        border-color: var(--pink-soft);
-        color: #fff;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(212, 141, 169, 0.3);
-      }
-
-      /* ===== SECTION TITLE ===== */
-      .section-title {
-        text-align: center;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--text-mid);
-        margin: 24px 0 14px;
-        position: relative;
-        animation: fadeInUp 0.6s ease-out backwards;
-      }
-
-      .section-title::before,
-      .section-title::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: 32px;
-        height: 1px;
-        background: var(--border-soft);
-      }
-      .section-title::before {
-        right: calc(50% + 70px);
-      }
-      .section-title::after {
-        left: calc(50% + 70px);
-      }
-
-      /* ===== PRODUCT GRID ===== */
-      .products {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-
-      .product-card {
-        display: flex;
-        flex-direction: column;
-        background: var(--bg-card);
-        border: 1.5px solid rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
-        text-decoration: none;
-        color: var(--text-dark);
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        animation: fadeInUp 0.6s ease-out backwards;
-      }
-
-      .product-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.05),
-          transparent
-        );
-        transition: left 0.6s ease;
-      }
-
-      .product-card:hover {
-        background: var(--bg-card-hover);
-        border-color: var(--border-hover);
-        transform: translateY(-4px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-      }
-
-      .product-card:hover::before {
-        left: 100%;
-      }
-
-      /* Product image - Vertical layout */
-      .product-img-wrap {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        overflow: hidden;
-        background: linear-gradient(135deg, #2d1b24, #3d2b45);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .product-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .product-card:hover .product-img {
-        transform: scale(1.08);
-      }
-
-      .product-img-placeholder {
-        font-size: 32px;
-        color: var(--pink-soft);
-      }
-
-      .product-info {
-        padding: 12px;
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .product-brand {
-        font-size: 9px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--pink-deep);
-      }
-
-      .product-name {
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--text-dark);
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        min-height: 36px;
-      }
-
-      .product-cta {
-        margin-top: 4px;
-        font-size: 11px;
-        font-weight: 600;
-        color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .product-cta-text {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-      }
-
-      .product-arrow {
-        color: var(--pink-deep);
-        font-size: 10px;
-        transition: all 0.3s ease;
-      }
-
-      .product-card:hover .product-arrow {
-        transform: translateX(3px);
-        color: var(--pink-soft);
-      }
-
-      /* Stagger */
-      .product-card:nth-child(1) { animation-delay: 0.1s; }
-      .product-card:nth-child(2) { animation-delay: 0.2s; }
-      .product-card:nth-child(3) { animation-delay: 0.3s; }
-      .product-card:nth-child(4) { animation-delay: 0.4s; }
-
-      /* ===== FOOTER ===== */
-      .footer {
-        margin-top: 40px;
-        text-align: center;
-        animation: fadeInUp 0.6s ease-out 0.5s backwards;
-      }
-
-      .footer-name {
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        color: var(--text-mid);
-        margin-bottom: 4px;
-      }
-
-      .footer-text {
-        font-size: 10px;
-        color: var(--text-muted);
-      }
-
-      /* ===== ANIMATIONS ===== */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(18px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 0.5;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.8;
-          transform: scale(1.05);
-        }
-      }
-
-      /* ===== CUTE FLOATING HEARTS ===== */
+      /* FLOATING HEARTS */
       .hearts {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         pointer-events: none;
         z-index: 0;
         overflow: hidden;
       }
-
       .heart {
         position: absolute;
-        font-size: 14px;
         opacity: 0;
         animation: floatHeart linear infinite;
-        color: rgba(212, 141, 169, 0.4);
+        color: rgba(245, 203, 217, 0.25);
       }
-
       .heart:nth-child(1) {
         left: 8%;
+        font-size: 12px;
         animation-duration: 8s;
         animation-delay: 0s;
-        font-size: 12px;
       }
       .heart:nth-child(2) {
-        left: 20%;
+        left: 22%;
+        font-size: 16px;
         animation-duration: 10s;
         animation-delay: 2s;
-        font-size: 16px;
       }
       .heart:nth-child(3) {
-        left: 35%;
+        left: 38%;
+        font-size: 10px;
         animation-duration: 7s;
         animation-delay: 4s;
-        font-size: 10px;
       }
       .heart:nth-child(4) {
-        left: 55%;
+        left: 56%;
+        font-size: 14px;
         animation-duration: 9s;
         animation-delay: 1s;
-        font-size: 14px;
       }
       .heart:nth-child(5) {
-        left: 70%;
+        left: 72%;
+        font-size: 12px;
         animation-duration: 11s;
         animation-delay: 3s;
-        font-size: 12px;
       }
       .heart:nth-child(6) {
-        left: 85%;
+        left: 88%;
+        font-size: 10px;
         animation-duration: 8s;
         animation-delay: 5s;
-        font-size: 10px;
-      }
-      .heart:nth-child(7) {
-        left: 92%;
-        animation-duration: 12s;
-        animation-delay: 0.5s;
-        font-size: 16px;
       }
 
       @keyframes floatHeart {
@@ -507,21 +138,381 @@
           transform: translateX(0) rotate(0deg);
         }
         10% {
-          opacity: 0.6;
+          opacity: 0.5;
         }
         90% {
-          opacity: 0.3;
+          opacity: 0.2;
         }
         100% {
           bottom: 110%;
           opacity: 0;
-          transform: translateX(30px) rotate(20deg);
+          transform: translateX(25px) rotate(15deg);
+        }
+      }
+
+      /* WRAPPER */
+      .page-wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .frame {
+        width: 100%;
+        max-width: 480px;
+        min-height: 100vh;
+        padding: 48px 22px 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(
+          160deg,
+          rgba(67, 43, 39, 0.45) 0%,
+          rgba(45, 29, 26, 0.35) 100%
+        );
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+
+      @media (min-width: 520px) {
+        .page-wrapper {
+          padding: 36px 16px 48px;
+        }
+        .frame {
+          min-height: unset;
+          border-radius: 32px;
+          border: 1px solid rgba(245, 203, 217, 0.08);
+          box-shadow: 0 8px 48px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      /* HEADER */
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 24px;
+        animation: fadeUp 0.6s ease-out;
+      }
+
+      .avatar-wrap {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid rgba(245, 203, 217, 0.3);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        margin-bottom: 14px;
+        background: #5a3d38;
+      }
+
+      .avatar-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .nama {
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 6px;
+        letter-spacing: 0.3px;
+      }
+
+      .tagline {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--text-muted);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+
+      /* BADGE SOSMED */
+      .sosmed-row {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 36px;
+        animation: fadeUp 0.6s ease-out 0.1s backwards;
+      }
+
+      .badge-sosmed {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-mid);
+        font-size: 19px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        backdrop-filter: blur(8px);
+      }
+
+      .badge-sosmed:hover {
+        background: var(--pink-soft);
+        border-color: var(--pink-soft);
+        color: #3b2220;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 18px rgba(245, 203, 217, 0.25);
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+        position: relative;
+        animation: fadeUp 0.6s ease-out backwards;
+      }
+
+      .section-label::before,
+      .section-label::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 24px;
+        height: 1px;
+        background: var(--border-soft);
+      }
+      .section-label::before {
+        right: calc(50% + 68px);
+      }
+      .section-label::after {
+        left: calc(50% + 68px);
+      }
+
+      /* BANNER SPILL PRODUK */
+      .banner-produk {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 18px;
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-soft);
+        border-radius: 20px;
+        text-decoration: none;
+        color: #fff;
+        margin-bottom: 32px;
+        transition: all 0.25s ease;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        animation: fadeUp 0.6s ease-out 0.15s backwards;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .banner-produk::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(245, 203, 217, 0.04),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+      }
+
+      .banner-produk:hover {
+        background: var(--bg-card-hover);
+        border-color: var(--border-hover);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+      }
+
+      .banner-produk:hover::after {
+        transform: translateX(100%);
+      }
+
+      .preview-thumbs {
+        display: flex;
+        flex-shrink: 0;
+      }
+
+      .preview-thumbs img {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 2px solid rgba(42, 24, 21, 0.7);
+        margin-left: -10px;
+        background: #5a3d38;
+      }
+
+      .preview-thumbs img:first-child {
+        margin-left: 0;
+      }
+
+      .banner-teks {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .banner-label {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--pink-deep);
+        margin-bottom: 3px;
+      }
+
+      .banner-judul {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 2px;
+      }
+
+      .banner-sub {
+        font-size: 11px;
+        color: var(--text-muted);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .banner-arrow {
+        font-size: 20px;
+        color: var(--pink-deep);
+        flex-shrink: 0;
+        transition:
+          transform 0.25s ease,
+          color 0.25s ease;
+        line-height: 1;
+      }
+
+      .banner-produk:hover .banner-arrow {
+        transform: translateX(4px);
+        color: var(--pink-soft);
+      }
+
+      /* DAFTAR LAINNYA */
+      .daftar-lain {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        animation: fadeUp 0.6s ease-out 0.2s backwards;
+      }
+
+      .link-lain {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 15px 18px;
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-soft);
+        border-radius: 16px;
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.25s ease;
+        backdrop-filter: blur(12px);
+      }
+
+      .link-lain:hover {
+        background: var(--bg-card-hover);
+        border-color: var(--border-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .link-lain-ikon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(245, 203, 217, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: var(--pink-deep);
+        flex-shrink: 0;
+      }
+
+      .link-lain-teks {
+        flex: 1;
+      }
+
+      .link-lain-label {
+        font-size: 10px;
+        color: var(--text-muted);
+        margin-bottom: 1px;
+      }
+
+      .link-lain-judul {
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .link-lain-arrow {
+        font-size: 16px;
+        color: var(--pink-deep);
+        transition:
+          transform 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .link-lain:hover .link-lain-arrow {
+        transform: translateX(3px);
+        color: var(--pink-soft);
+      }
+
+      /* FOOTER */
+      .footer {
+        margin-top: 44px;
+        text-align: center;
+        animation: fadeUp 0.6s ease-out 0.3s backwards;
+      }
+
+      .footer-nama {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        margin-bottom: 3px;
+      }
+
+      .footer-copy {
+        font-size: 10px;
+        color: #7a5550;
+      }
+
+      /* ANIMASI */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
     </style>
   </head>
   <body>
-    <!-- Floating hearts decoration -->
+    <!-- Floating hearts -->
     <div class="hearts">
       <span class="heart">🌸</span>
       <span class="heart">💕</span>
@@ -529,138 +520,110 @@
       <span class="heart">✨</span>
       <span class="heart">💕</span>
       <span class="heart">🌸</span>
-      <span class="heart">✨</span>
     </div>
 
     <div class="page-wrapper">
       <div class="frame">
-        <!-- HEADER -->
+        <!-- PROFIL -->
         <header class="header">
-          <div class="avatar-wrapper">
-            <img src="public/img/profile.jpg" alt="Imelda Laksmi" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <i class="fa-solid fa-star avatar-icon" style="display: none;"></i>
+          <div class="avatar-wrap">
+            <img
+              src="public/img/profile.jpg"
+              alt="Imelda Laksmi"
+              onerror="this.style.opacity = '0'"
+            />
           </div>
-          <div class="brand-name">Imelda Laksmi</div>
-          <div class="brand-tagline">Official Account</div>
-
-          <!-- SOCIAL ICONS -->
-          <div class="social-row">
-            <a
-              href="https://www.instagram.com/emilmeihwa?igsh=MWoyYTlwODdqcm11dQ%3D%3D&utm_source=qr"
-              class="social-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.tiktok.com/@emilmeihwa?_r=1&_t=ZS-96D6bPqwS0H"
-              class="social-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok"
-            >
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
-          </div>
+          <div class="nama">Imelda Laksmi</div>
+          <div class="tagline">Official Account</div>
         </header>
 
-        <!-- REKOMENDASI PRODUK -->
-        <h2 class="section-title">Rekomendasi Produk</h2>
-        <div class="products">
-          <!-- Shampoo -->
+        <!-- BADGE SOSMED -->
+        <div class="sosmed-row">
           <a
-            href="https://id.shp.ee/FFBxSWnq"
-            class="product-card"
+            href="https://www.instagram.com/emilmeihwa?igsh=MWoyYTlwODdqcm11dQ%3D%3D&utm_source=qr"
+            class="badge-sosmed"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/@emilmeihwa?_r=1&_t=ZS-96D6bPqwS0H"
+            class="badge-sosmed"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+          >
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a
+            href="#"
+            class="badge-sosmed"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+
+        <!-- SPILL PRODUK -->
+        <div class="section-label">Spill Produk</div>
+        <a href="products.html" class="banner-produk">
+          <div class="preview-thumbs">
+            <img src="public/img/shampoo.png" alt="Shampoo" />
+            <img src="public/img/showergell.png" alt="Shower Gel" />
+            <img src="public/img/bodylotion.png" alt="Body Lotion" />
+          </div>
+          <div class="banner-teks">
+            <div class="banner-label">Beautylatory</div>
+            <div class="banner-judul">Lihat Semua Produk</div>
+            <div class="banner-sub">Shampoo · Shower Gel · Body Lotion</div>
+          </div>
+          <span class="banner-arrow">›</span>
+        </a>
+
+        <!-- LAINNYA -->
+        <div class="section-label">Lainnya</div>
+        <div class="daftar-lain">
+          <a
+            href="https://shopee.co.id/"
+            class="link-lain"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="product-img-wrap">
-              <img
-                src="public/img/shampoo.png"
-                alt="Mommylatory Shampoo"
-                class="product-img"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
-              <div class="product-img-placeholder" style="display: none">🧴</div>
+            <div class="link-lain-ikon">
+              <i class="fa-brands fa-shopee"></i>
             </div>
-            <div class="product-info">
-              <div class="product-brand">Mommylatory</div>
-              <div class="product-name">Shampoo</div>
-              <div class="product-cta">
-                <div class="product-cta-text">
-                  <i class="fa-solid fa-bag-shopping" style="font-size: 10px"></i>
-                  Beli di Shopee
-                </div>
-                <i class="fa-solid fa-arrow-right product-arrow"></i>
-              </div>
+            <div class="link-lain-teks">
+              <div class="link-lain-label">Toko Resmi</div>
+              <div class="link-lain-judul">Shopee Store</div>
             </div>
+            <span class="link-lain-arrow">›</span>
           </a>
 
-          <!-- Shower Gel -->
           <a
-            href="https://id.shp.ee/r1MuUQzi"
-            class="product-card"
+            href="https://www.instagram.com/emilmeihwa?igsh=MWoyYTlwODdqcm11dQ%3D%3D&utm_source=qr"
+            class="link-lain"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="product-img-wrap">
-              <img
-                src="public/img/showergell.png"
-                alt="Mommylatory Shower Gel"
-                class="product-img"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
-              <div class="product-img-placeholder" style="display: none">🚿</div>
+            <div class="link-lain-ikon">
+              <i class="fa-solid fa-envelope"></i>
             </div>
-            <div class="product-info">
-              <div class="product-brand">Mommylatory</div>
-              <div class="product-name">Shower Gel</div>
-              <div class="product-cta">
-                <div class="product-cta-text">
-                  <i class="fa-solid fa-bag-shopping" style="font-size: 10px"></i>
-                  Beli di Shopee
-                </div>
-                <i class="fa-solid fa-arrow-right product-arrow"></i>
-              </div>
+            <div class="link-lain-teks">
+              <div class="link-lain-label">Kolaborasi & Endorse</div>
+              <div class="link-lain-judul">DM via Instagram</div>
             </div>
-          </a>
-
-          <!-- Body Lotion -->
-          <a
-            href="https://id.shp.ee/jjNZ5AeT"
-            class="product-card"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="product-img-wrap">
-              <img
-                src="public/img/bodylotion.png"
-                alt="Mommylatory Body Lotion"
-                class="product-img"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
-              <div class="product-img-placeholder" style="display: none">🌿</div>
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Mommylatory</div>
-              <div class="product-name">Body Lotion</div>
-              <div class="product-cta">
-                <div class="product-cta-text">
-                  <i class="fa-solid fa-bag-shopping" style="font-size: 10px"></i>
-                  Beli di Shopee
-                </div>
-                <i class="fa-solid fa-arrow-right product-arrow"></i>
-              </div>
-            </div>
+            <span class="link-lain-arrow">›</span>
           </a>
         </div>
 
         <!-- FOOTER -->
         <footer class="footer">
-          <div class="footer-name">IMELDA LAKSMI</div>
-          <div class="footer-text">© 2026 · Official Account</div>
+          <div class="footer-nama">Imelda Laksmi</div>
+          <div class="footer-copy">© 2026 · Official Account</div>
         </footer>
       </div>
     </div>

@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Semua produk Beautylatory — Imelda Laksmi"
+    />
+    <meta name="theme-color" content="#432B27" />
+    <title>Produk — Imelda Laksmi</title>
+    <link rel="stylesheet" href="public/css/all.min.css" />
+    <style>
+      :root {
+        --pink-soft: #f5cbd9;
+        --pink-deep: #f89fb8;
+        --text-dark: #ffffff;
+        --text-mid: #f5cbd9;
+        --text-muted: #d4b5b0;
+        --border-soft: rgba(245, 203, 217, 0.15);
+        --border-hover: rgba(245, 203, 217, 0.35);
+        --bg-card: rgba(67, 43, 39, 0.55);
+        --bg-card-hover: rgba(90, 61, 56, 0.7);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          "Segoe UI",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        min-height: 100vh;
+        background: #3b2220;
+        color: var(--text-dark);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(
+          160deg,
+          rgba(67, 43, 39, 0.92) 0%,
+          rgba(45, 29, 26, 0.88) 100%
+        );
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle 320px at 15% 15%,
+            rgba(245, 203, 217, 0.07) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            circle 260px at 85% 75%,
+            rgba(90, 61, 56, 0.1) 0%,
+            transparent 70%
+          );
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* FLOATING HEARTS */
+      .hearts {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .heart {
+        position: absolute;
+        opacity: 0;
+        animation: floatHeart linear infinite;
+        color: rgba(245, 203, 217, 0.25);
+      }
+      .heart:nth-child(1) {
+        left: 8%;
+        font-size: 12px;
+        animation-duration: 8s;
+        animation-delay: 0s;
+      }
+      .heart:nth-child(2) {
+        left: 22%;
+        font-size: 16px;
+        animation-duration: 10s;
+        animation-delay: 2s;
+      }
+      .heart:nth-child(3) {
+        left: 38%;
+        font-size: 10px;
+        animation-duration: 7s;
+        animation-delay: 4s;
+      }
+      .heart:nth-child(4) {
+        left: 56%;
+        font-size: 14px;
+        animation-duration: 9s;
+        animation-delay: 1s;
+      }
+      .heart:nth-child(5) {
+        left: 72%;
+        font-size: 12px;
+        animation-duration: 11s;
+        animation-delay: 3s;
+      }
+      .heart:nth-child(6) {
+        left: 88%;
+        font-size: 10px;
+        animation-duration: 8s;
+        animation-delay: 5s;
+      }
+
+      @keyframes floatHeart {
+        0% {
+          bottom: -20px;
+          opacity: 0;
+          transform: translateX(0) rotate(0deg);
+        }
+        10% {
+          opacity: 0.5;
+        }
+        90% {
+          opacity: 0.2;
+        }
+        100% {
+          bottom: 110%;
+          opacity: 0;
+          transform: translateX(25px) rotate(15deg);
+        }
+      }
+
+      /* WRAPPER */
+      .page-wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .frame {
+        width: 100%;
+        max-width: 480px;
+        min-height: 100vh;
+        padding: 36px 22px 64px;
+        background: linear-gradient(
+          160deg,
+          rgba(67, 43, 39, 0.45) 0%,
+          rgba(45, 29, 26, 0.35) 100%
+        );
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+
+      @media (min-width: 520px) {
+        .page-wrapper {
+          padding: 36px 16px 48px;
+        }
+        .frame {
+          min-height: unset;
+          border-radius: 32px;
+          border: 1px solid rgba(245, 203, 217, 0.08);
+          box-shadow: 0 8px 48px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      /* NAV ATAS */
+      .nav-atas {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 28px;
+        animation: fadeUp 0.5s ease-out;
+      }
+
+      .tombol-kembali {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-mid);
+        font-size: 15px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        flex-shrink: 0;
+        backdrop-filter: blur(8px);
+      }
+
+      .tombol-kembali:hover {
+        background: var(--pink-soft);
+        border-color: var(--pink-soft);
+        color: #3b2220;
+        transform: translateX(-2px);
+      }
+
+      .nav-judul {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .nav-sub {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+
+      /* GRID PRODUK */
+      .grid-produk {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .kartu-produk {
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-soft);
+        border-radius: 20px;
+        text-decoration: none;
+        color: #fff;
+        overflow: hidden;
+        transition: all 0.25s ease;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        animation: fadeUp 0.6s ease-out backwards;
+      }
+
+      .kartu-produk:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .kartu-produk:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .kartu-produk:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .kartu-produk:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      .kartu-produk:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      .kartu-produk:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+
+      .kartu-produk:hover {
+        background: var(--bg-card-hover);
+        border-color: var(--border-hover);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+      }
+
+      .foto-wrap {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background: linear-gradient(135deg, #432b27, #5a3d38);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .foto-produk {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .kartu-produk:hover .foto-produk {
+        transform: scale(1.07);
+      }
+
+      .foto-fallback {
+        font-size: 34px;
+      }
+
+      .info-produk {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .merek {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--pink-deep);
+      }
+
+      .nama-produk {
+        font-size: 13px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.35;
+      }
+
+      .tombol-beli {
+        margin-top: 6px;
+        display: block;
+        padding: 8px 0;
+        background: rgba(245, 203, 217, 0.1);
+        border-radius: 10px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--pink-soft);
+        transition: background 0.2s;
+      }
+
+      .kartu-produk:hover .tombol-beli {
+        background: rgba(245, 203, 217, 0.2);
+      }
+
+      /* FOOTER */
+      .footer {
+        margin-top: 44px;
+        text-align: center;
+        animation: fadeUp 0.6s ease-out 0.35s backwards;
+      }
+
+      .footer-nama {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        margin-bottom: 3px;
+      }
+
+      .footer-copy {
+        font-size: 10px;
+        color: #7a5550;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hearts">
+      <span class="heart">🌸</span>
+      <span class="heart">💕</span>
+      <span class="heart">🌸</span>
+      <span class="heart">✨</span>
+      <span class="heart">💕</span>
+      <span class="heart">🌸</span>
+    </div>
+
+    <div class="page-wrapper">
+      <div class="frame">
+        <!-- NAV ATAS -->
+        <nav class="nav-atas">
+          <a href="index.html" class="tombol-kembali" aria-label="Kembali">
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <div>
+            <div class="nav-judul">Spill Produk ✨</div>
+            <div class="nav-sub">Semua rekomendasi Beautylatory</div>
+          </div>
+        </nav>
+
+        <!-- GRID PRODUK -->
+        <div class="grid-produk">
+          <!-- Shampoo -->
+          <a
+            href="https://id.shp.ee/FFBxSWnq"
+            class="kartu-produk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="foto-wrap">
+              <img
+                src="public/img/shampoo.png"
+                alt="Beautylatory Shampoo"
+                class="foto-produk"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="foto-fallback" style="display: none">🧴</span>
+            </div>
+            <div class="info-produk">
+              <div class="merek">Beautylatory</div>
+              <div class="nama-produk">Shampoo</div>
+              <span class="tombol-beli">Beli di Shopee</span>
+            </div>
+          </a>
+
+          <!-- Shower Gel -->
+          <a
+            href="https://id.shp.ee/r1MuUQzi"
+            class="kartu-produk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="foto-wrap">
+              <img
+                src="public/img/showergell.png"
+                alt="Beautylatory Shower Gel"
+                class="foto-produk"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="foto-fallback" style="display: none">🚿</span>
+            </div>
+            <div class="info-produk">
+              <div class="merek">Beautylatory</div>
+              <div class="nama-produk">Shower Gel</div>
+              <span class="tombol-beli">Beli di Shopee</span>
+            </div>
+          </a>
+
+          <!-- Body Lotion -->
+          <a
+            href="https://id.shp.ee/jjNZ5AeT"
+            class="kartu-produk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="foto-wrap">
+              <img
+                src="public/img/bodylotion.png"
+                alt="Beautylatory Body Lotion"
+                class="foto-produk"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="foto-fallback" style="display: none">🌿</span>
+            </div>
+            <div class="info-produk">
+              <div class="merek">Beautylatory</div>
+              <div class="nama-produk">Body Lotion</div>
+              <span class="tombol-beli">Beli di Shopee</span>
+            </div>
+          </a>
+
+          <!-- Tambah produk baru: copy satu blok kartu-produk di atas -->
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="footer-nama">Imelda Laksmi</div>
+          <div class="footer-copy">© 2026 · Official Account</div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
