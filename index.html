@@ -7,20 +7,25 @@
       name="description"
       content="Imelda Laksmi - Official Account. Rekomendasi produk Beautylatory."
     />
-    <meta name="theme-color" content="#432B27" />
+    <meta name="theme-color" content="#ad4f7b" />
+    <link rel="icon" type="image/x-icon" href="public/img/favicon.ico" />
     <title>Imelda Laksmi</title>
     <link rel="stylesheet" href="public/css/all.min.css" />
     <style>
       :root {
-        --pink-soft: #f5cbd9;
-        --pink-deep: #f89fb8;
+        --pink-primary: #c17299;
+        --pink-medium: #b36e90;
+        --pink-soft: #ca84a9;
+        --pink-light: #cd90b1;
+        --pink-deep: #ad4f7b;
+        --white: #ffffff;
         --text-dark: #ffffff;
-        --text-mid: #f5cbd9;
-        --text-muted: #d4b5b0;
-        --border-soft: rgba(245, 203, 217, 0.15);
-        --border-hover: rgba(245, 203, 217, 0.35);
-        --bg-card: rgba(67, 43, 39, 0.55);
-        --bg-card-hover: rgba(90, 61, 56, 0.7);
+        --text-mid: #cd90b1;
+        --text-muted: #ca84a9;
+        --border-soft: rgba(193, 114, 153, 0.25);
+        --border-hover: rgba(193, 114, 153, 0.55);
+        --bg-card: rgba(173, 79, 123, 0.18);
+        --bg-card-hover: rgba(179, 110, 144, 0.28);
       }
 
       * {
@@ -39,7 +44,7 @@
           BlinkMacSystemFont,
           sans-serif;
         min-height: 100vh;
-        background: #3b2220;
+        background: #2a1020;
         color: var(--text-dark);
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
@@ -54,8 +59,9 @@
         inset: 0;
         background: linear-gradient(
           160deg,
-          rgba(67, 43, 39, 0.92) 0%,
-          rgba(45, 29, 26, 0.88) 100%
+          rgba(173, 79, 123, 0.55) 0%,
+          rgba(42, 16, 32, 0.95) 60%,
+          rgba(20, 8, 16, 1) 100%
         );
         z-index: 0;
         pointer-events: none;
@@ -67,13 +73,18 @@
         inset: 0;
         background:
           radial-gradient(
-            circle 320px at 15% 15%,
-            rgba(245, 203, 217, 0.07) 0%,
+            circle 380px at 10% 10%,
+            rgba(193, 114, 153, 0.18) 0%,
             transparent 70%
           ),
           radial-gradient(
-            circle 260px at 85% 75%,
-            rgba(90, 61, 56, 0.1) 0%,
+            circle 300px at 90% 80%,
+            rgba(173, 79, 123, 0.15) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            circle 200px at 50% 50%,
+            rgba(205, 144, 177, 0.06) 0%,
             transparent 70%
           );
         z-index: 0;
@@ -92,7 +103,7 @@
         position: absolute;
         opacity: 0;
         animation: floatHeart linear infinite;
-        color: rgba(245, 203, 217, 0.25);
+        color: rgba(205, 144, 177, 0.3);
       }
       .heart:nth-child(1) {
         left: 8%;
@@ -169,13 +180,16 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: linear-gradient(
-          160deg,
-          rgba(67, 43, 39, 0.45) 0%,
-          rgba(45, 29, 26, 0.35) 100%
-        );
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        background:
+          linear-gradient(
+            160deg,
+            rgba(173, 79, 123, 0.72) 0%,
+            rgba(42, 16, 32, 0.88) 60%,
+            rgba(20, 8, 16, 0.95) 100%
+          ),
+          url("public/img/Background.png") center center / cover no-repeat;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
       }
 
       @media (min-width: 520px) {
@@ -185,8 +199,8 @@
         .frame {
           min-height: unset;
           border-radius: 32px;
-          border: 1px solid rgba(245, 203, 217, 0.08);
-          box-shadow: 0 8px 48px rgba(0, 0, 0, 0.5);
+          border: 1px solid rgba(193, 114, 153, 0.2);
+          box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
         }
       }
 
@@ -205,10 +219,10 @@
         height: 100px;
         border-radius: 50%;
         overflow: hidden;
-        border: 3px solid rgba(245, 203, 217, 0.3);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        border: 3px solid rgba(193, 114, 153, 0.5);
+        box-shadow: 0 4px 24px rgba(173, 79, 123, 0.4);
         margin-bottom: 14px;
-        background: #5a3d38;
+        background: #6b2d50;
       }
 
       .avatar-wrap img {
@@ -259,11 +273,11 @@
       }
 
       .badge-sosmed:hover {
-        background: var(--pink-soft);
-        border-color: var(--pink-soft);
-        color: #3b2220;
+        background: var(--pink-primary);
+        border-color: var(--pink-primary);
+        color: #fff;
         transform: translateY(-3px);
-        box-shadow: 0 8px 18px rgba(245, 203, 217, 0.25);
+        box-shadow: 0 8px 18px rgba(173, 79, 123, 0.4);
       }
 
       /* SECTION LABEL */
@@ -324,7 +338,7 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(245, 203, 217, 0.04),
+          rgba(193, 114, 153, 0.08),
           transparent
         );
         transform: translateX(-100%);
@@ -335,7 +349,7 @@
         background: var(--bg-card-hover);
         border-color: var(--border-hover);
         transform: translateY(-3px);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 10px 28px rgba(173, 79, 123, 0.3);
       }
 
       .banner-produk:hover::after {
@@ -352,9 +366,9 @@
         height: 50px;
         border-radius: 12px;
         object-fit: cover;
-        border: 2px solid rgba(42, 24, 21, 0.7);
+        border: 2px solid rgba(42, 16, 32, 0.7);
         margin-left: -10px;
-        background: #5a3d38;
+        background: #6b2d50;
       }
 
       .preview-thumbs img:first-child {
@@ -439,12 +453,12 @@
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        background: rgba(245, 203, 217, 0.1);
+        background: rgba(173, 79, 123, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 15px;
-        color: var(--pink-deep);
+        color: var(--pink-light);
         flex-shrink: 0;
       }
 
@@ -495,7 +509,7 @@
 
       .footer-copy {
         font-size: 10px;
-        color: #7a5550;
+        color: #b36e90;
       }
 
       /* ANIMASI */
@@ -528,7 +542,7 @@
         <header class="header">
           <div class="avatar-wrap">
             <img
-              src="public/img/profile.jpg"
+              src="public/img/profile.png"
               alt="Imelda Laksmi"
               onerror="this.style.opacity = '0'"
             />
